@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Result - Transbank Payment Demo</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Result</h1>
+        
+        <div id="loadingStatus" class="payment-status">
+            <div class="loading-spinner"></div>
+            <h2>Processing your payment...</h2>
+            <p>Please wait while we confirm your payment with Transbank.</p>
+        </div>
+
+        <div id="paymentResult" class="payment-status hidden">
+            <div id="resultContent"></div>
+            <div class="actions">
+                <button id="backButton" class="pay-button">Back to Home</button>
+                <button id="newPaymentButton" class="pay-button secondary">Make Another Payment</button>
+            </div>
+        </div>
+
+        <div id="errorResult" class="payment-status hidden">
+            <div class="status-error">
+                <h2>❌ Payment Error</h2>
+                <p id="errorMessage">There was an error processing your payment.</p>
+                <div class="actions">
+                    <button id="retryButton" class="pay-button">Try Again</button>
+                    <button id="homeButton" class="pay-button secondary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/payment-result.js"></script>
+</body>
+</html> 
