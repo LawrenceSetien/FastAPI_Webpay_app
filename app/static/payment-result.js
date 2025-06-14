@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSuccess(data) {
         loadingStatus.classList.add('hidden');
         paymentResult.classList.remove('hidden');
-        
+
         const statusIcon = data.status === 'AUTHORIZED' ? '✅' : '⚠️';
         const statusText = data.status === 'AUTHORIZED' ? 'Payment Successful!' : 'Payment Status: ' + data.status;
-        
+
         resultContent.innerHTML = `
             <div class="status-success">
                 <h2>${statusIcon} ${statusText}</h2>
@@ -108,4 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
         errorResult.classList.remove('hidden');
         errorMessage.textContent = message;
     }
-}); 
+});

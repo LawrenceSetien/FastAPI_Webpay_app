@@ -18,4 +18,4 @@ class PaymentStatus(BaseModel):
     session_id: str
     card_number: Optional[str] = None
     accounting_date: Optional[str] = None
-    transaction_date: Optional[str] = None 
+    transaction_date: Optional[str] = None

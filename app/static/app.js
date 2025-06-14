@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!buyOrderInput.value || buyOrderInput.value === 'ORDER-123') {
         buyOrderInput.value = `ORDER-${Math.random().toString(36).substr(2, 9)}`;
     }
-
     // Generate a random session ID if not provided
     if (!sessionIdInput.value || sessionIdInput.value === 'SESSION-123') {
         sessionIdInput.value = `SESSION-${Math.random().toString(36).substr(2, 9)}`;
@@ -40,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 // Redirect to Transbank payment page
-                window.location.href = data.url;
+                const paymentUrl = `${data.url}?token_ws=${data.token}`;
+                window.location.href = paymentUrl;
             } else {
                 throw new Error(data.detail || 'Payment creation failed');
             }
@@ -56,4 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
         statusContent.innerHTML = content;
         statusContent.className = `status-${type}`;
     }
-}); 
+});

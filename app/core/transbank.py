@@ -65,8 +65,7 @@ async def create_transaction(amount: float, buy_order: str, session_id: str, ret
 
     url = f"{base_url}/rswebpaytransaction/api/webpay/v1.2/transactions"
 
-    logger.info(f"Creating transaction with payload={payload}")
-    logger.info(f"URL: {url}")
+    logger.info(f"Creating transaction with:\n Payload: {payload}\n URL: {url}")
 
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -74,7 +73,7 @@ async def create_transaction(amount: float, buy_order: str, session_id: str, ret
             response.raise_for_status()
 
             data = response.json()
-            logger.info(f"Transaction created successfully: token={data.get('token')}, url={data.get('url')}")
+            logger.info(f"Transaction created successfully:\n token={data.get('token')}, url={data.get('url')}")
 
             return TransactionResponse(
                 token=data["token"],
