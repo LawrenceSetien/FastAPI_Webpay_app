@@ -40,11 +40,12 @@ Once the application is running, you can access:
 
 This application uses Transbank's test environment by default. For testing, you can use the following test cards:
 
-- Normal payment: 4051885600446623
-- Rejected payment: 4051885600446624
+- Redcompra ok: 4511 3466 6003 7060
+- Redcompra Error: 5186 0085 4123 3829
 
-Expiration date: Any future date
-CVV: 123
+- Credentials:
+  - RUT: 11.111.111-1
+  - Pass: 123
 
 ## Deactivating the Virtual Environment
 
